@@ -1,0 +1,6 @@
+[submodule "pass/.password-store"]
+	path = pass/.password-store
+	url = https://github.com/samyosm/password-store
+[submodule "nvim/.config/nvim"]
+	path = nvim/.config/nvim
+	url = https://github.com/astronvim/astronvim
