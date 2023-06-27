@@ -141,23 +141,23 @@
   },
 
   // Modules center
-  "modules-center": [],
+  "modules-center": [
+    "network",
+    "cpu",
+    "memory"
+  ],
   "hyprland/window": {
     "format": " <span font_desc='Iosevka Fixed 12'>{:.40}</span> ",
     "separate-outputs": false
   },
-
   // Modules right
   "modules-right": [
     "tray",
-    // "cpu",
-    // "memory",
     // "pulseaudio",
     // "pulseaudio#microphone",
     "pulseaudio#audio",
-    // "network",
-    "network#wlo1",
-    "network#eno1",
+    // "network#wlo1",
+    // "network#eno1",
     // "battery",
     "clock",
     "custom/powermenu"
@@ -168,13 +168,15 @@
   },
   "cpu": {
     "format": "󰻠 {usage}%",
-    "on-click": "",
-    "tooltip": false
+    "on-click": "btop",
+    "tooltip": false,
+    "interval": 1
   },
   "memory": {
     "format": "󰍛 {used:0.1f}GB ({percentage}%) / {total:0.1f}GB",
-    "on-click": "",
-    "tooltip": false
+    "on-click": "btop",
+    "tooltip": false,
+    "interval": 1
   },
   "backlight": {
     "format": "{icon} {percent}%",
@@ -232,14 +234,12 @@
     "max-volume": 100,
     "tooltip": false
   },
-  // "network": {
-  //   "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
-  //   "format-wifi": "{icon}",
-  //   "format-ethernet": "󰈀",
-  //   "format-disconnected": "󱞐 Disconnected",
-  //   "format-alt": "{icon} {essid} | 󰢮 {ifname} | 󰩟 {ipaddr}/{cidr} | 󰞒 {bandwidthDownBytes} | 󰞕 {bandwidthUpBytes}",
-  //   "tooltip": false
-  // },
+  "network": {
+    "format-ethernet": "󰞒 {bandwidthDownBytes} | 󰞕 {bandwidthUpBytes}",
+    "format-disconnected": "󱞐 Disconnected",
+    "tooltip": false,
+    "interval": 1
+  },
   "network#wlo1": {
     "interval": 1,
     "interface": "wlo1",
@@ -296,8 +296,8 @@
   },
   "custom/powermenu": {
     "format": "󰤆",
-    "on-click": "~/.config/tofi/scripts/powermenu.sh",
-    "on-click-right": "~/.config/tofi/scripts/powermenu.sh",
+    "on-click": "~/.config/rofi/scripts/powermenu_t6",
+    "on-click-right": "~/.config/rofi/scripts/powermenu_t6",
     "tooltip": false
   }
 }
